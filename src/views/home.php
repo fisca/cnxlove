@@ -1,10 +1,3 @@
-<?php
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-?>
-
 <!doctype html>
 <html lang="en">
     <head>
@@ -37,37 +30,15 @@
 
         <div id="pagewrap">
 
-            <header id="header">
-
-                <hgroup>
-                    <h1 id="site-logo"><a href="#">CNXLOVE.com</a></h1>
-                    <h2 id="site-description">Site Description</h2>
-                </hgroup>
-
-                <nav>
-                    <ul id="main-nav" class="clearfix">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Service</a> </li>
-                        <li><a href="#">Contact us</a></li>
-                    </ul>
-                    <!-- /#main-nav --> 
-                </nav>
-
-                <form id="searchform">
-                    <input type="search" id="s" placeholder="Search">
-                </form>
-
-            </header>
-            <!-- /#header -->
+<?php require_once 'header.php'; ?>
 
             <div id="content">
 
                 <article class="post clearfix">
 
                     <header>
-                        <h1 class="post-title"><a href="#">Just a Post Title</a></h1>
-                        <p class="post-meta"><time class="post-date" datetime="2011-05-08" pubdate>May 8, 2011</time> <em>in</em> <a href="#">Category</a></p>
+                        <h1 class="post-title"><a href="#">Hello World.</a></h1>
+                        <p class="post-meta"><time class="post-date" datetime="2013-08-12" pubdate>Aug 12, 2013</time> <em>in</em> <a href="#">Category</a></p>
                     </header>
                     <figure class="post-image"> 
                         <img src="../themes/adaptive-design/images/sample-image.jpg" /> 
@@ -103,34 +74,9 @@
             <!-- /#content --> 
 
 
-            <aside id="sidebar">
+<?php require_once 'sidebar.php'; ?>
 
-                <section class="widget">
-                    <h4 class="widgettitle">Sidebar</h4>
-                    <ul>
-                        <li><a href="#">WordPress</a> (3)</li>
-                        <li><a href="#">Design</a> (23)</li>
-                        <li><a href="#">Design </a>(18)</li>
-                    </ul>
-                </section>
-                <!-- /.widget -->
-
-                <section class="widget clearfix">
-                    <h4 class="widgettitle">Flickr</h4>
-                    <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=8.&display=latest&size=s&layout=x&source=user&user=52839779@N02"></script> 
-                </section>
-                <!-- /.widget -->
-
-            </aside>
-            <!-- /#sidebar -->
-
-            <footer id="footer">
-
-                <p>&copy; 2012-<?php echo date('Y'); ?> cnxlove.com.
-                    Thanks for responsive design by <a href="http://webdesignerwall.com" target="_blank" style="color: #ccc;">Web Designer Wall</a></p>
-
-            </footer>
-            <!-- /#footer --> 
+<?php require_once 'footer.php'; ?>
 
         </div>
         <!-- /#pagewrap -->
