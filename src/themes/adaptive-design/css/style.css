@@ -30,7 +30,13 @@ GENERAL STYLING
 *************************************************************************************/
 body {
 	background: #0d1424 url(../images/body-bg.jpg) no-repeat center top;
-	font: .81em/150% Arial, Helvetica, sans-serif;
+	/* font: .81em/150% Arial, Helvetica, sans-serif; */
+	
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 1.5em;
+	font-size: 0.95em;
+	clear: both;
+	
 	color: #666;
 }
 a {
