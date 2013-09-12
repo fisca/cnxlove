@@ -7,7 +7,7 @@
 
                 <nav>
                     <ul id="main-nav" class="clearfix">
-                        <li><a href="#">Home</a></li>
+                        <li><a href="home.php">Home</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Service</a> </li>
                         <li><a href="#">Contact us</a></li>

@@ -51,6 +51,7 @@ function thai_date($str_date, $show_day = "n") {
     }
 }
 
+// =============== Controllers =================
 function controll($name) {
     $conf = new config();
     echo $conf->controllers($name);
@@ -61,6 +62,7 @@ function get_controll($name) {
     require_once $conf->controllers($name);
 }
 
+// ================ Includes ===================
 function includes($name) {
     $conf = new config();
     echo $conf->includes($name);
@@ -71,19 +73,20 @@ function get_includes($name) {
     require_once $conf->includes($name);
 }
 
+// ================= Plugins ======================
 function plugins($file_name) {
     $conf = new config();
     echo $conf->plugins($file_name);
 }
 
-function script($file_name){
+function script($file_name) {
     $conf = new config();
-    echo $conf->script($file_name);
+    echo '<script src="' . $conf->script($file_name) . '"></script>';
 }
 
-function style($file_name){
+function style($file_name) {
     $conf = new config();
-    echo $conf->style($file_name);
+    echo '<link href="' . $conf->style($file_name) . '" rel="stylesheet">';
 }
 
 function views($name) {
@@ -101,36 +104,11 @@ function uploads($file_name) {
     echo $conf->uploads($file_name);
 }
 
-function doc_head($title){
-    echo '
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-
-        <!-- disable iPhone inital scale -->
-        <meta name="viewport" content="width=device-width; initial-scale=1.0">
-
-        <title>' . $title . '</title>
-        
-        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
-        <!-- main css -->
-        <link href="../themes/adaptive-design/css/style.css" rel="stylesheet" type="text/css">
-
-        <!-- media queries css -->
-        <link href="../themes/adaptive-design/css/media-queries.css" rel="stylesheet" type="text/css">
-
-        <!-- html5.js for IE less than 9 -->
-        <!--[if lt IE 9]>
-                <script src="../themes/adaptive-design/js/html5.js"></script>
-        <![endif]-->
-
-        <!-- css3-mediaqueries.js for IE less than 9 -->
-        <!--[if lt IE 9]>
-                <script src="../themes/adaptive-design/js/css3-mediaqueries.js"></script>
-        <![endif]-->
-        
+function doc_head($title) {
+    get_includes('doc-head');
+    echo '<title>' . $title . '</title>
     ';
+    script('jquery-1.10.2.js');
 }
+
 ?>
