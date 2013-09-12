@@ -1,4 +1,5 @@
 <?php
+
 //******************************
 //___________CONFIG______________
 //*******************************
@@ -36,71 +37,76 @@ $user = array(
 //=======================================================
 
 class config {
-    
-    function db_connect(){
+
+    function db_connect() {
         @mysql_connect(HOST, USER, PASS) or die(mysql_error());
         mysql_select_db(DB_NAME);
         mysql_query("SET NAMES UTF8");
     }
-    
-    function db_set_time_zone(){
+
+    function db_set_time_zone() {
         // Set timzone Bkk +7---------------
-        $timezone = "Asia/Bangkok"; 
-        if(function_exists('date_default_timezone_set')) date_default_timezone_set($timezone); 
+        $timezone = "Asia/Bangkok";
+        if (function_exists('date_default_timezone_set'))
+            date_default_timezone_set($timezone);
 
         mysql_query("SET SESSION time_zone = '+7:00'");
     }
 
-	// ====== Base Directory & Path ======================
-    function base_dir($dir) {		
-		return BASEPATH . $dir;
+    // ====== Base Directory & Path ======================
+    function base_dir($dir) {
+        return BASEPATH . $dir;
     }
-	
-	function controllers_path($name){
-		return $this->base_dir('controllers') . $name . '.php';
-	}
-	
-	function includes_path($name){
-		return $this->base_dir('includes') . $name . '.php';
-	}
-	
-	function script_path($file_name){
-		return $this->base_dir('script') . $file_name;
-	}
-	
-	function views_path($name){
-		return $this->base_dir('views') . $name . '.php';
-	}
-	// =======================================
-	
-	// ===========File and Directory  ======================
-	
-	function controllers($name){
-		return '../controllers/' . $name . '.php';
-	}
-	
-	function includes($name){
-		return '../includes/' . $name . '.php';
-	}
-	
-	function plugins($file_name){
-		return '../plugins/' . $file_name;
-	}
-	
-	function script($file_name){
-		return '../script/' . $file_name ;
-	}
-	
-	function style($file_name){
-		return '../style/' . $file_name ;
-	}
-	
-	function views($name){
-		return '../views/' . $name . '.php';
-	}
-	
-	// ===========================================   
-    
-} // END class config
 
+    function controllers_path($name) {
+        return $this->base_dir('controllers') . $name . '.php';
+    }
+
+    function includes_path($name) {
+        return $this->base_dir('includes') . $name . '.php';
+    }
+
+    function script_path($file_name) {
+        return $this->base_dir('script') . $file_name;
+    }
+
+    function views_path($name) {
+        return $this->base_dir('views') . $name . '.php';
+    }
+
+    // =======================================
+    // ===========File and Directory  ======================
+
+    function controllers($name) {
+        return '../controllers/' . $name . '.php';
+    }
+
+    function includes($name) {
+        return '../includes/' . $name . '.php';
+    }
+
+    function plugins($file_name) {
+        return '../plugins/' . $file_name;
+    }
+
+    function script($file_name) {
+        return '../script/' . $file_name;
+    }
+
+    function style($file_name) {
+        return '../style/' . $file_name;
+    }
+
+    function views($name) {
+        return '../views/' . $name . '.php';
+    }
+
+    function uploads($file_name) {
+        return '../upload/' . $file_name;
+    }
+
+    // ===========================================   
+}
+
+// END class config
 ?>

@@ -1,3 +1,4 @@
+<?php require_once '../system/system.php'; ?>
 <!doctype html>
 <html lang="en">
     <head>
@@ -32,7 +33,7 @@
 
         <div id="pagewrap">
 
-<?php require_once 'header.php'; ?>
+<?php get_includes('header'); ?>
 
             <div id="content">
 
