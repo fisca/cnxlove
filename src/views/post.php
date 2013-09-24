@@ -1,5 +1,10 @@
 <?php 
 require_once '../system/system.php'; 
+if (isset($_SESSION['login'])) {
+    $username = $_SESSION['login'];
+    $pass = $_SESSION['pass'];
+}
+
 doc_head('CNXLOVE.com');
 ?>
         <!-- Datepicker -->

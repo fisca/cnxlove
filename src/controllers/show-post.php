@@ -1,4 +1,6 @@
 <?php
+
+$_SESSION['login'] = "AA";
 $sql = "SELECT * FROM tb_post ORDER BY date DESC;";
 $result = mysql_query($sql);
 while ($p = mysql_fetch_array($result)) {
@@ -7,8 +9,8 @@ while ($p = mysql_fetch_array($result)) {
                     <header>
                         <h1 class="post-title"><a href="#">' . htmlspecialchars_decode($p['title']) . '</a></h1>
                         <p class="post-meta">
-                            <time class="post-date" title="'. date("H:i:s", strtotime($p['date'])) .'" datetime="'. date("Y-m-d", strtotime($p['date'])) .'" pubdate>' . thai_date($p['date']) . '</time> 
-                            <em>in</em> <a href="#">'. htmlspecialchars_decode($p['category']) .'</a>
+                            <time class="post-date" title="' . date("H:i:s", strtotime($p['date'])) . '" datetime="' . date("Y-m-d", strtotime($p['date'])) . '" pubdate>' . thai_date($p['date']) . '</time> 
+                            <em>in</em> <a href="#">' . htmlspecialchars_decode($p['category']) . '</a>
                             <em>by</em> <a href="#">' . $p['author'] . '</a>
                         </p>
                     </header>
@@ -16,9 +18,17 @@ while ($p = mysql_fetch_array($result)) {
     . '
                     
                     <hr>
+          ';
+
+    if (isset($_SESSION['login'])) {
+        echo '
+                    <div id="edit-' . $p['id'] . '" style="cursor: pointer;">Edit Post</div>
+            ';
+    }
+    echo '
                 </article>
                 <!-- /.post -->                
     ';
-}
+} // END while
 ?>
 
