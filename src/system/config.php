@@ -13,7 +13,7 @@ define("USER", "root");
 define("PASS", "1234");
 define("DB_NAME", "db_cnxlove");
 
-define("DOMAIN", "http://localhost/cnxlove"); /* setting for real web=>  http://www.cnxlove.com  */
+define("DOMAIN", "http://localhost/cnxlove"); /* setting for real website =>  "http://cnxlove.com"  */
 define("DOMAIN_NAME", "cnxlove.com");
 
 define("MAIN", "index.php");
@@ -96,13 +96,17 @@ class config {
     function style($file_name) {
         return '../style/' . $file_name;
     }
+    
+    function themes($file_name){
+        return '../themes/' . $file_name;
+    }
 
     function views($name) {
         return '../views/' . $name . '.php';
     }
 
     function uploads($file_name) {
-        return '../upload/' . $file_name;
+        return '../uploads/' . $file_name;
     }
 
     // ===========================================   

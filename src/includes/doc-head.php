@@ -23,3 +23,5 @@
         <!--[if lt IE 9]>
                 <script src="../themes/adaptive-design/js/css3-mediaqueries.js"></script>
         <![endif]-->
+        
+        <link href="../style/main.css" rel="stylesheet" type="text/css">

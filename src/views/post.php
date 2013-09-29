@@ -35,7 +35,7 @@ doc_head('CNXLOVE.com');
 
 <?php get_includes('header'); ?>
 
-            <div id="content">
+            <div id="content-1">
                 <div id="add-post" style="cursor: pointer;">Add Post</div>
                 <?php get_controll('show-post'); ?>
             </div>
