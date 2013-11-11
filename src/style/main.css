@@ -14,3 +14,36 @@
     box-shadow: 0 1px 3px rgba(0,0,0,.4);
 }
 
+body {
+    font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+    color: #333;
+    font-size: 13px;
+    line-height: 1.38;
+}
+
+a{
+    color: #3b5998;
+    cursor: pointer;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.post-title {
+    font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;;
+    font-size: 13px;
+    font-style: normal;
+    font-variant: normal;
+    color: #3b5998;
+    font-weight: bold;
+    line-height: 120%;
+}
+
+.post-title a {
+    text-decoration: none;
+    color: #3b5998
+}
+.post-title a:hover {
+    text-decoration: underline;
+}
