@@ -10,4 +10,6 @@ Copyright &copy; 2010 <a href="<?php echo get_settings('home'); ?>/">
 <!--Footer end-->
 
 <?php wp_footer(); ?>
-</body></html>
+<script src="<?php echo bloginfo('template_url'); ?>/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

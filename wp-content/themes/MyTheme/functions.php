@@ -18,4 +18,11 @@ if ( function_exists('register_sidebar') )
 		'before_title' => '<h5>',
 		'after_title' => '</h5>',
 	));
+
+add_action( 'init', 'register_my_menu' );
+
+function register_my_menu() {
+   register_nav_menu( 'primary-menu', __( 'Primary Menu' ) );
+}
+
 ?>
