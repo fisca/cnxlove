@@ -1,10 +1,10 @@
 /*  
-Theme Name: Adobe Developer Connection Theme
-Theme URI: http://www.adobe.com/devnet/
+Theme Name: MyTheme
+Theme URI: http://cnxlove.com
 Description: WordPress theme created with Adobe Dreamweaver
 Version: 1.0
-Author: Codify Design Studio
-Author URI: http://www.codifydesign.com
+Author: fisca2012
+Author URI: http://cnxlove.com
 */
 
 body {
@@ -12,20 +12,36 @@ body {
     padding:0;
     color: #333;
     font-size: 12px;
-    font-family: Arial;
-    font-family: Arial, Verdana, Univers;
-    background-color: #fff;
+    background: transparent url("images/bg.jpg") repeat left top;
 }
 
-.container{
-    margin: 0 auto;
+.container, .row{
+    margin: 0;
+    padding: 0;
 }
+
 .clearboth { 
     clear:both;
 }
 
+#footer {
+    background: transparent url("images/bg_Blackpattern.png") repeat left top;
+    width: 100%;
+    min-height: 250px;
+}
+
 @media (min-width: 1200px){
     .container{
-        width: 960px;
-    } 
+        width: 100%;
+    }
+    
+    #blog-content{
+        min-height: 300px;
+    }
+}
+
+@media (Max-width: 1199px)  {
+    .container{
+        width: 100%;
+    }
 }

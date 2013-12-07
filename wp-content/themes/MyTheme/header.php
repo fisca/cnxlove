@@ -29,13 +29,14 @@
     </head>
 
     <body class="container">
+        
         <div class="row">
 
             <div class="bannernav"><a href="#" >Privacy Policy</a> &bull; <a href="#" >Contact Us</a> &bull; <a href="#" >Site Map</a></div>
 
             <!--Title and description start-->    
 
-            <a href="<?php echo get_option('home'); ?>"><img src="<?php bloginfo('template_url'); ?>/images/blog_head.png"  width="300" height="83" alt="CNX Love"  border="0"></a>
+            <a href="<?php echo get_option('home'); ?>"><img class="img-responsive" src="<?php bloginfo('template_url'); ?>/images/blog_head.png"  width="300" height="83" alt="CNX Love"  border="0"></a>
 
             <!--Title and description end-->    
 
@@ -45,7 +46,7 @@
 
         <!--Navbar start-->
 
-        <nav class="navbar navbar-default" role="navigation">
+        <nav  style="background: rgba(204,204,204,0.5)" class="navbar navbar-default" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <?php wp_nav_menu(array('theme_location' => 'primary-menu')); ?>

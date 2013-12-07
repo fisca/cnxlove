@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
-<div class="row">
+<div class="row" id="blog-content">
 
-    <div class="col-md-8">
+    <div class="col-md-12">
         <!--Here's where the loop starts-->
 
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -23,7 +23,7 @@
                             <?php comments_popup_link('Leave a comment', '1 Comment', '% Comments', '', 'Comments are off'); ?>
                         </span>
                     </p>
-                    
+
                     <div class="entry">
                         <?php the_content('<p>Continue reading…</p>'); ?>
                         <?php the_tags('<p>Tags:&nbsp;', ', ', '</p>'); ?>
@@ -48,10 +48,11 @@
         <p>
             <?php posts_nav_link(); ?>
         </p>
-    </div>
+    </div> <!-- /.col-md-12 -->
 
-    <?php get_sidebar(); ?>
+    <?php /* get_sidebar(); */ ?>
 
     <div style="clear:both;"></div>    
 </div> <!-- /.row -->
+
 <?php get_footer(); ?>

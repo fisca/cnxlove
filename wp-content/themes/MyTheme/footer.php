@@ -1,11 +1,16 @@
 <!--Footer start-->
 
-<div class="footerArea">
-<div class="container">
-<div class="copyright">
-Copyright &copy; 2010 <a href="<?php echo get_settings('home'); ?>/">
-  <?php bloginfo('name'); ?>
-  </a> <a href="#">Terms of Use</a> | <a href="#">Privacy</a> | <a href="#">Contact</a></div></div></div>
+<div class="row" id="footer">
+
+    <div class="col-md-12">
+
+        Copyright &copy; 2010 <a href="<?php echo get_settings('home'); ?>/">
+            <?php bloginfo('name'); ?>
+        </a> <a href="#">Terms of Use</a> | <a href="#">Privacy</a> | <a href="#">Contact</a>
+
+    </div>
+
+</div>
 
 <!--Footer end-->
 
