@@ -45,13 +45,15 @@
         </div> <!-- /.row -->
 
         <!--Navbar start-->
-
+        
+        <!--
         <nav  style="background: rgba(204,204,204,0.5)" class="navbar navbar-default" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
+         <!--   <div class="navbar-header">
+                -->
                 <?php wp_nav_menu(array('theme_location' => 'primary-menu')); ?>
-            </div>
-        </nav>
+           <!-- </div>
+        </nav> -->
 
 
         <!--Navbar end-->

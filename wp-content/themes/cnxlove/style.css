@@ -1,7 +1,7 @@
 /*  
-Theme Name: MyTheme
+Theme Name: cnxlove
 Theme URI: http://cnxlove.com
-Description: WordPress theme created with Adobe Dreamweaver
+Description: ...
 Version: 1.0
 Author: fisca2012
 Author URI: http://cnxlove.com
@@ -15,33 +15,37 @@ body {
     background: transparent url("images/bg.jpg") repeat left top;
 }
 
-.container, .row{
-    margin: 0;
-    padding: 0;
+.container {
+    margin: 0 auto;
 }
 
-.clearboth { 
-    clear:both;
+.row {
+    margin: 0 auto;
+    max-width: 71.42857em;
+}
+
+nav {
+    margin-right: 0;
+    margin-left: 0;
 }
 
 #footer {
     background: transparent url("images/bg_Blackpattern.png") repeat left top;
     width: 100%;
-    min-height: 250px;
 }
 
 @media (min-width: 1200px){
     .container{
-        width: 100%;
+        
     }
     
     #blog-content{
-        min-height: 300px;
+        
     }
 }
 
 @media (Max-width: 1199px)  {
     .container{
-        width: 100%;
+        
     }
 }

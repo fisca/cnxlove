@@ -9,13 +9,14 @@
 
                 <!--Post box begin-->
 
-                <div class="box">
+                <div class="box" style="border-bottom:solid 1px #080808;">
                     <h2 class="posttitle">
                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                     </h2>
                     <p class="metablock">
-                        <span class="meta">Posted on
-                            <?php the_time('F j, Y'); ?>
+                        <span class="meta">
+                            Posted on 
+                            <?php the_time('F j, Y'); ?> 
                             by
                             <?php the_author_posts_link(); ?>
                         </span>
@@ -29,7 +30,10 @@
                         <?php the_tags('<p>Tags:&nbsp;', ', ', '</p>'); ?>
                     </div>
                     <!--<?php trackback_rdf(); ?>--> 
-                </div>
+
+                    <p>&nbsp;</p>
+
+                </div> <!-- /.box -->
 
                 <!--Post box end--> 
 
