@@ -10,24 +10,29 @@ Author URI: http://cnxlove.com
 body {
     margin: 0;
     padding:0;
+    font-family: Arial, Helvetica, sans-serif;
     color: #333;
     font-size: 12px;
+    line-height: 20px;
     background: transparent url("images/bg.jpg") repeat left top;
 }
 
 .container {
+    width: 100%;
     margin: 0 auto;
+    padding: 0;
 }
 
 .row {
-    margin: 0 auto;
-    max-width: 71.42857em;
+    margin: 0;
+    width: 100%;
 }
 
 nav {
     margin-right: 0;
     margin-left: 0;
 }
+
 
 #footer {
     background: transparent url("images/bg_Blackpattern.png") repeat left top;
@@ -36,16 +41,18 @@ nav {
 
 @media (min-width: 1200px){
     .container{
-        
+
     }
-    
-    #blog-content{
-        
+
+    .content-1 {
+        width: 970px;
+        margin: 0 auto;
     }
+
 }
 
 @media (Max-width: 1199px)  {
     .container{
-        
+
     }
 }

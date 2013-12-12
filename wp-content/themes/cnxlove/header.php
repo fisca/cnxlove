@@ -29,31 +29,26 @@
     </head>
 
     <body class="container">
-        
-        <div class="row">
 
-            <div class="bannernav"><a href="#" >Privacy Policy</a> &bull; <a href="#" >Contact Us</a> &bull; <a href="#" >Site Map</a></div>
+        <div class="row" style="background-color: #333">
 
-            <!--Title and description start-->    
+            <div class="col-md-12 content-1">
 
-            <a href="<?php echo get_option('home'); ?>"><img class="img-responsive" src="<?php bloginfo('template_url'); ?>/images/blog_head.png"  width="300" height="83" alt="CNX Love"  border="0"></a>
+                <div class="bannernav"><a href="#" >Privacy Policy</a> &bull; <a href="#" >Contact Us</a> &bull; <a href="#" >Site Map</a></div>
 
-            <!--Title and description end-->    
+                <!--Title and description start-->    
 
-            <div style="clear:both;"></div>
+                <a href="<?php echo get_option('home'); ?>"><img class="img-responsive" src="<?php bloginfo('template_url'); ?>/images/blog_head.png"  width="300" height="83" alt="CNX Love"  border="0"></a>
+
+                <!--Title and description end-->
+            </div>
+
+
 
         </div> <!-- /.row -->
 
         <!--Navbar start-->
         
-        <!--
-        <nav  style="background: rgba(204,204,204,0.5)" class="navbar navbar-default" role="navigation">
-            <!-- Brand and toggle get grouped for better mobile display -->
-         <!--   <div class="navbar-header">
-                -->
-                <?php wp_nav_menu(array('theme_location' => 'primary-menu')); ?>
-           <!-- </div>
-        </nav> -->
-
+                <?php /* wp_nav_menu(array('theme_location' => 'primary-menu')); */ ?>       
 
         <!--Navbar end-->
