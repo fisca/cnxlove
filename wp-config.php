@@ -3,9 +3,9 @@
  * The base configurations of the WordPress.
  *
  * This file has the following configurations: MySQL settings, Table Prefix,
- * Secret Keys, WordPress Language, and ABSPATH. You can find more information
- * by visiting {@link http://codex.wordpress.org/Editing_wp-config.php Editing
- * wp-config.php} Codex page. You can get the MySQL settings from your web host.
+ * Secret Keys, and ABSPATH. You can find more information by visiting
+ * {@link http://codex.wordpress.org/Editing_wp-config.php Editing wp-config.php}
+ * Codex page. You can get the MySQL settings from your web host.
  *
  * This file is used by the wp-config.php creation script during the
  * installation. You don't have to use the web site, you can just copy this file
@@ -16,7 +16,7 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'wordpress');
+define('DB_NAME', 'db_cnxlove');
 
 /** MySQL database username */
 define('DB_USER', 'root');
@@ -42,14 +42,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'j7<+Fm@a1SifH@|Yd/2rtDJxc|:D+*c.uIS8P@%&=5|Uy^a+JkG 8P8 ?#[k/I57');
-define('SECURE_AUTH_KEY',  'R_2)H&!z`I,f3e,!AWj>P$//I6B?N&rgZ|)fkQ(?+r?H+U>{H:r}!#Hw5wy(ll)R');
-define('LOGGED_IN_KEY',    ' Tg~CR6XyQ&+$eSmAHCPI}|v2Eg_kY%3Nh|q3l@zf4qW>Vmz|9WWAx9V1r{2}PAv');
-define('NONCE_KEY',        'tsmv:B-#9}kpOPP+]HHR*+fIIH7+nPMD~wdu6x!b&}`l)z0}T{9>+dLsQ<<|4Dv]');
-define('AUTH_SALT',        'jJ|a-cwP.o1>i0E_O8b5+Q ZMbz+ZP)uy 7xJ#m+rMJcv1}9(=+:d`PCo{$OjyNz');
-define('SECURE_AUTH_SALT', 'hioLU^3$[ -jw?/Bf^@46$F4 #wseVLq0}o<Wy`?qr|gy3vQa#Q]&vW5=WtwE)pr');
-define('LOGGED_IN_SALT',   ';sf@h#K`-BA.KUA*ZyT1YXr2vm}:LWOW-DFbC}f9_@v3>Uf^rC@D9*>f=y;A!`+/');
-define('NONCE_SALT',       'ieCNqP{VPZ}O+la/VmS8!h53ecCM?.bu0>L]^9NonG8$8|(Cv7@yA4&@8fp|N(1X');
+define('AUTH_KEY',         'nh%tB%Di,<i?Usq1L(c|k5|^@>?z#7/V|gdi9p-?hly!3 2NDUP9=@&y3Dks=;)a');
+define('SECURE_AUTH_KEY',  ')pZJnjXGcDQzQ5Q/%?5!tMyIj@s|irxa<,5-wSZIyfg|}*(t4rvvXaM0@C~(5r>!');
+define('LOGGED_IN_KEY',    'JW|SqG)MaL+kk :9^jT5R6XF5+Si_1r,]crOV;OU5*%a4N-`#wok@yJdCk~_aF9=');
+define('NONCE_KEY',        '<~KI*?IeWBufG#A7kdzc;D{M%w`_Tr@5Ej,J~vU]|rV|T[.Lsu^KS`,$ W!SRE;:');
+define('AUTH_SALT',        '*^j4*Ijjq{7Lo[f+U2V4!=q8DwK x[Zt|e>+OL-U[lN>4cy`gO(Stq1rrht,q|l|');
+define('SECURE_AUTH_SALT', '_((AOosDMLm^-v_][c.%zh~;5^<AEx@N#c|MSqbtjYo-AeGqCeG%>TyLp;[1_$*:');
+define('LOGGED_IN_SALT',   'zU$qfse){pmUw(AXiksz6l+zs65N%uT`sF{,xG`?/P*|p-~qA^9Y7Nkwh#dJBo6Y');
+define('NONCE_SALT',       'n|vz2N1L|F66[gZ-qMQ>2LG(/xBD-O_9`j|g>J{<|45I0]@fYV+*tFHS.0>,ra.@');
 
 /**#@-*/
 
@@ -60,16 +60,6 @@ define('NONCE_SALT',       'ieCNqP{VPZ}O+la/VmS8!h53ecCM?.bu0>L]^9NonG8$8|(Cv7@y
  * prefix. Only numbers, letters, and underscores please!
  */
 $table_prefix  = 'wp_';
-
-/**
- * WordPress Localized Language, defaults to English.
- *
- * Change this to localize WordPress. A corresponding MO file for the chosen
- * language must be installed to wp-content/languages. For example, install
- * de_DE.mo to wp-content/languages and set WPLANG to 'de_DE' to enable German
- * language support.
- */
-define('WPLANG', '');
 
 /**
  * For developers: WordPress debugging mode.
