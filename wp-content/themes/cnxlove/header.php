@@ -33,7 +33,36 @@
     </head>
 
     <body <?php body_class(); ?>>
+
+
+
         <header class="container">
             <a href="<?php bloginfo('url') ?>"><h1><?php bloginfo('name'); ?></h1></a>
-            <p><?php bloginfo('description'); ?></p>            
+            <p><?php bloginfo('description'); ?></p>
+
         </header>
+        <nav class="navbar navbar-default">
+            <div class="container">                
+                <?php
+                $defaults = array(
+                    'theme_location' => '',
+                    'menu' => '',
+                    'container' => 'div',
+                    'container_class' => '',
+                    'container_id' => '',
+                    'menu_class' => 'collapse navbar-collapse',
+                    'menu_id' => '',
+                    'echo' => true,
+                    'fallback_cb' => 'wp_page_menu',
+                    'before' => '',
+                    'after' => '',
+                    'link_before' => '',
+                    'link_after' => '',
+                    'items_wrap' => '<ul id="%1$s" class="nav navbar-nav">%3$s</ul>',
+                    'depth' => 0,
+                    'walker' => ''
+                );
+                wp_nav_menu($defaults);
+                ?>
+            </div> <!-- /.container -->            
+        </nav>
