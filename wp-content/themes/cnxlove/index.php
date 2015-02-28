@@ -27,7 +27,7 @@ get_header();
             <?php if (have_posts()): while (have_posts()): the_post(); ?>
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><?php the_title(); ?></h3>
+                            <h2 class="panel-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                         </div>
 
                         <div class="page-body">                            
