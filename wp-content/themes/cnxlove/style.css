@@ -14,3 +14,39 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
+body {
+    background: #fff;
+    color: #606569;
+    font: 14px/1.5 "Open Sans", Arial, sans-serif;
+}
+
+nav {
+    
+}
+
+.navbar, .panel, .panel-heading  {
+    border-radius: 0;
+}
+
+@media (min-width: 1200px){
+    .container, nav {
+        width: 1024px;
+    }
+
+}
+
+@media (min-width: 992px){
+    nav {
+        width: 970px;
+    }
+}
+
+nav.container {
+    background-color: #19232d;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+
