@@ -21,11 +21,9 @@ get_header();
 <div class="container" style="padding-right: 0; padding-left: 0;">
     <div class="row">
 
-        <?php // get_sidebar(); ?>
         <div class="col-md-4">
             <ul class="post-list">
                 <?php if (have_posts()) : ?>
-
                     <?php $the_query = new WP_Query('cat=2'); ?>
                     <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
@@ -33,12 +31,11 @@ get_header();
                             <a style="float: left; position: relative; color: #19232d; text-decoration: none; transition: all .4s ease-in-out;" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(array(60, 60)); ?></a>
                             <div style="  margin-left: 75px; min-height: 0;">
                                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                            </div>                          
-
+                                <?php the_content(); ?>
+                            </div>
                         </li>
 
                     <?php endwhile; ?>
-
                     <?php wp_reset_postdata(); ?>
                 <?php endif; ?>
             </ul>
@@ -46,7 +43,10 @@ get_header();
 
 
         <div class="col-md-4">
-            <?php if (have_posts()): while (have_posts()): the_post(); ?>
+
+            <?php if (have_posts()): ?>
+                <?php $the_query = new WP_Query('cat=3'); ?>
+                <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
                     <div class="panel panel-primary">
                         <div class="panel-heading">
@@ -62,16 +62,15 @@ get_header();
                         </div>
                     </div>            
 
-                    <?php
-                endwhile;
-            else:
-                ?>
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+            <?php else: ?>
                 <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
             <?php endif; ?>
         </div> <!-- /.col-md-4 -->
 
         <div class="col-md-4">
-
+            <?php get_sidebar(); ?>
         </div> <!-- /.col-md-4 -->
 
     </div> <!-- /.row -->

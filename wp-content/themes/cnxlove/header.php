@@ -27,12 +27,7 @@
 
         <!--[if lt IE 9]>
         <script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/html5.js"></script>
-        <![endif]-->
-        <script>
-            (function () {
-                document.documentElement.className = 'js';
-            })();
-        </script>        
+        <![endif]-->              
 
         <?php wp_head(); ?>
     </head>
@@ -56,28 +51,20 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="<?php bloginfo('url') ?>">Home</a>
+                    <a style="color:#a6a1a1;" class="navbar-brand" href="<?php bloginfo('url') ?>">Home</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                        <li><a href="#">Link</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">One more separated link</a></li>
-                            </ul>
-                        </li>
+                    <ul class="nav navbar-nav">                        
+                        <?php $q_pages = new WP_Query(array('post_type' => 'page')); ?>
+                        <?php if ($q_pages->have_posts()) : ?>
+                            <?php while ($q_pages->have_posts()) : $q_pages->the_post(); ?>
+                                <li><a style="color:#a6a1a1;" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+                                <?php endwhile; ?>
+                            <?php endif; ?>
+                            <?php wp_reset_postdata(); ?>
                     </ul>
-
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container -->
         </nav>
