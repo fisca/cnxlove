@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="container">
+<div class="container" style="padding-right: 0; padding-left: 0;">
     <div class="row">
 
         <div class="col-md-8">
@@ -28,12 +28,29 @@
                                 ?>
                             </small><p>&nbsp;</p>
                             <?php the_content(); ?>
+                            
+                            <?php
+                            $tags = get_tags();
+                            $html = '<div class="post_tags"><small>Tags: ';
+                            foreach ($tags as $tag) {
+                                $tag_link = get_tag_link($tag->term_id);
+
+                                $html .= "<a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}'>";
+                                $html .= "{$tag->name}</a> ";
+                            }
+                            $html .= '</small></div>';
+                            echo $html;
+                            ?>
+                            
+                            <?php comments_template(); ?> 
+                            
                         </div>
                     </div>
                 </div>
-                <?php previous_post_link(); ?> 
+                <?php previous_post_link(); ?> &nbsp; &nbsp;
                 <?php next_post_link(); ?>
             <?php endwhile; ?>
+            
         </div>
 
         <div class="col-md-4">

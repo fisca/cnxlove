@@ -22,7 +22,7 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="<?php echo get_stylesheet_uri() . '?v=' . time(); ?>">
 
-
+        <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery-1.11.2.min.js"></script>
         <script src="<?php echo get_stylesheet_directory_uri(); ?>/bootstrap/js/bootstrap.min.js"></script>
 
         <!--[if lt IE 9]>
@@ -56,7 +56,20 @@
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">                        
+                    <ul class="nav navbar-nav">
+
+                        <?php
+                        $args = array(
+                            'orderby' => 'name',
+                            'order' => 'ASC'
+                        );
+                        $categories = get_categories($args);
+                        foreach ($categories as $category):
+                            echo '<li><a style="color:#a6a1a1;" href="' . get_category_link($category->term_id) . '" title="' . sprintf(__("View all posts in %s"), $category->name) . '" ' . '>' . $category->name . '</a> </li> ';
+
+                        endforeach;
+                        ?>
+
                         <?php $q_pages = new WP_Query(array('post_type' => 'page')); ?>
                         <?php if ($q_pages->have_posts()) : ?>
                             <?php while ($q_pages->have_posts()) : $q_pages->the_post(); ?>
@@ -68,3 +81,5 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container -->
         </nav>
+
+

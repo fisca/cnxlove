@@ -21,31 +21,28 @@ get_header();
 <div class="container" style="padding-right: 0; padding-left: 0;">
     <div class="row">
 
+        <!-- 
         <div class="col-md-4">
             <ul class="post-list">
-                <?php if (have_posts()) : ?>
-                    <?php $the_query = new WP_Query('cat=2'); ?>
-                    <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-
-                        <li style="padding-top: 21px;">
-                            <a style="float: left; position: relative; color: #19232d; text-decoration: none; transition: all .4s ease-in-out;" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(array(60, 60)); ?></a>
-                            <div style="  margin-left: 75px; min-height: 0;">
-                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                <?php the_content(); ?>
-                            </div>
-                        </li>
-
-                    <?php endwhile; ?>
-                    <?php wp_reset_postdata(); ?>
-                <?php endif; ?>
+        <?php if (have_posts()) : ?>
+            <?php $the_query = new WP_Query('cat=2'); ?>
+            <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                                                                                                                                                <li>                            
+                                                                                                                                                    <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>                            
+                <?php the_content(); ?>                            
+                                                                                                                                                </li>
+            <?php endwhile; ?>
+            <?php wp_reset_postdata(); ?>
+        <?php endif; ?>
             </ul>
-        </div> <!-- /.col-md-4 -->
+        </div>
+        -->
 
+        <div class="col-md-8">
+            <?php $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1; ?>
+            <?php $the_query = new WP_Query('posts_per_page=5&paged=' . $paged); ?>
+            <?php if ($the_query->have_posts()): ?>               
 
-        <div class="col-md-4">
-
-            <?php if (have_posts()): ?>
-                <?php $the_query = new WP_Query('cat=3'); ?>
                 <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
                     <div class="panel panel-primary">
@@ -56,18 +53,34 @@ get_header();
                         <div class="page-body">                            
                             <div style="padding: 15px;">
                                 <small><?php the_time(get_option('date_format')); ?></small>
+                                in <small>
+                                    <?php
+                                $categories = get_the_category();
+                                $separator = ' ';
+                                $output = '';
+                                if ($categories) {
+                                    foreach ($categories as $category) {
+                                        $output .= '<a href="' . get_category_link($category->term_id) . '" title="' . esc_attr(sprintf(__("View all posts in %s"), $category->name)) . '">' . $category->cat_name . '</a>' . $separator;
+                                    }
+                                    echo trim($output, $separator);
+                                }
+                                ?>
+                                </small>                                
                                 <br><small>&nbsp;</small>
                                 <?php the_content(); ?>
                             </div>
                         </div>
-                    </div>            
-
+                    </div>
                 <?php endwhile; ?>
-                <?php wp_reset_postdata(); ?>
+                <?php next_posts_link('Older Entries', $the_query->max_num_pages); ?>
+                <?php previous_posts_link('Newer Entries'); ?>
+
             <?php else: ?>
                 <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
             <?php endif; ?>
-        </div> <!-- /.col-md-4 -->
+
+
+        </div> <!-- /.col-md-8 -->
 
         <div class="col-md-4">
             <?php get_sidebar(); ?>
