@@ -42,44 +42,43 @@
 
         </header>
         <nav class="container navbar navbar-default">
-            <div class="">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a style="color:#a6a1a1;" class="navbar-brand" href="<?php bloginfo('url') ?>">Home</a>
-                </div>
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a style="color: #efefef;" class="navbar-brand" href="<?php bloginfo('url') ?>">Home</a>
+            </div>
 
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
 
-                        <?php
-                        $args = array(
-                            'orderby' => 'name',
-                            'order' => 'ASC'
-                        );
-                        $categories = get_categories($args);
-                        foreach ($categories as $category):
-                            echo '<li><a style="color:#a6a1a1;" href="' . get_category_link($category->term_id) . '" title="' . sprintf(__("View all posts in %s"), $category->name) . '" ' . '>' . $category->name . '</a> </li> ';
+                    <?php
+                    $args = array(
+                        'orderby' => 'name',
+                        'order' => 'ASC'
+                    );
+                    $categories = get_categories($args);
+                    foreach ($categories as $category):
+                        echo '<li><a style="color: #efefef;" href="' . get_category_link($category->term_id) . '" title="' . sprintf(__("View all posts in %s"), $category->name) . '" ' . '>' . $category->name . '</a> </li> ';
 
-                        endforeach;
-                        ?>
+                    endforeach;
+                    ?>
 
-                        <?php $q_pages = new WP_Query(array('post_type' => 'page')); ?>
-                        <?php if ($q_pages->have_posts()) : ?>
-                            <?php while ($q_pages->have_posts()) : $q_pages->the_post(); ?>
-                                <li><a style="color:#a6a1a1;" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-                                <?php endwhile; ?>
-                            <?php endif; ?>
-                            <?php wp_reset_postdata(); ?>
-                    </ul>
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container -->
+                    <?php $q_pages = new WP_Query(array('post_type' => 'page')); ?>
+                    <?php if ($q_pages->have_posts()) : ?>
+                        <?php while ($q_pages->have_posts()) : $q_pages->the_post(); ?>
+                            <li><a style="color: #efefef;" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+                        <?php wp_reset_postdata(); ?>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+
         </nav>
 
 
